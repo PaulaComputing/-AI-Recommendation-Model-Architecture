@@ -108,31 +108,6 @@ locust -f test/locustfile.py --host=[http://18.212.91.247:8000](http://18.212.91
 
 ---
 
-## Resultados y Evidencia de Despliegue
+**Resultados y Evidencia de Despliegue alojado en la carpeta Capturas_Relacionadas y verificadas mediante los test**
 
-### Métricas Observadas en Producción (EC2 `t3.medium`)
-* **Inferencia directa en modelo PyTorch (`PyTorch-Inference-EC2`):** `14.27 ms`
-* **Respuesta desde memoria (`Redis-Cache`):** `0.23 ms` *(reducción de ~98 % en tiempo de respuesta)*
-* **Tasa de error bajo concurrencia:** `0 %`
 
-### Capturas del Sistema Operativo - Carpeta Capturas_Relacionadas
-1. **API REST y Endpoints (Swagger UI):**
-   ![API Swagger](evidencias/01_api_swagger_endpoints.png)
-
-2. **Validación de Estado (`GET /health` - HTTP 200):**
-   ![Healthcheck 200](evidencias/02_api_healthcheck_200.png)
-
-3. **Dashboard Interactivo (Streamlit):**
-   ![Dashboard Inicio](evidencias/03_dashboard_inicio.png)
-
-4. **Inferencia en Tiempo Real con PyTorch NeuMF:**
-   ![Inferencia PyTorch](evidencias/04_inferencia_pytorch_ec2.png)
-
-5. **Aceleración con Caché Distribuida Redis (`0.23 ms`):**
-   ![Respuesta Redis](evidencias/05_respuesta_redis_cache.png)
-
-6. **Publicación de Eventos en RabbitMQ e Invalidación de Caché:**
-   ![Evento RabbitMQ](evidencias/06_evento_rabbitmq_cola.png)
-
-7. **Orquestación de Contenedores en AWS EC2 (`docker compose ps`):**
-   ![Contenedores EC2](evidencias/09_docker_compose_ps.png)
